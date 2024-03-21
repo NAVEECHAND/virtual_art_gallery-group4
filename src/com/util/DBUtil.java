@@ -3,13 +3,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 public class DBUtil {
-	 private String usernameDb="root";
-	 private String passwordDb="";
-	 private String urlDb= "jdbc:mysql://localhost:3306/galary";
-	 private String driverName="com.mysql.jdbc.Driver";
-	 private Connection conn;
+
+	 private static Connection conn;
 	 //load the driver
-	 public Connection dbConnect() {
+	 public static Connection getdbConnect() {
+		    String usernameDb="root";
+			String passwordDb="";
+			String urlDb="jdbc:mysql://localhost:3306/art_galary";
+			String driverName="com.mysql.jdbc.Driver";
 	 try {
 	 Class.forName(driverName);
 	 System.out.println("Driver loaded successfully");
@@ -27,7 +28,7 @@ public class DBUtil {
 	 }
 	 return conn;
 	 }
-	 public void dbClose()
+	 public static void dbClose()
 	 {
 	 try {
 	 conn.close();
@@ -36,6 +37,7 @@ public class DBUtil {
 	 e.printStackTrace();
 	 }
 	 }
+
 }
 
 
