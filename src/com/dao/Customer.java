@@ -20,6 +20,7 @@ public class Customer {
 		List<CustomerModel>list=new ArrayList<>();
 		String sql="select * from customer";
 		
+		
 		try {
 		java.sql.PreparedStatement pstmt=conn.prepareStatement(sql);
 		ResultSet rst=pstmt.executeQuery();
@@ -57,4 +58,40 @@ public class Customer {
 		return list;
 	}
 
+
+
+
+public void delete(int id) {
+	conn=db.dbConnect();
+	String sql="delete from customer where customer_id=?";
+	try
+	{
+		PreparedStatement pstmt=(PreparedStatement) conn.prepareStatement(sql);
+		pstmt.setInt(1, id);
+		pstmt.executeUpdate();
+	}
+	catch(SQLException e)
+	{
+		System.out.println(e.getMessage());
+	}
+	db.dbClose();
+	
 }
+public void update(int id) {
+	conn=db.dbConnect();
+	String sql="update customer set password=? where id=?";
+	try
+	{
+		PreparedStatement pstmt=(PreparedStatement) conn.prepareStatement(sql);
+		pstmt.setInt(9, id);
+		pstmt.executeUpdate();
+	}
+	catch(SQLException e)
+	{
+		System.out.println(e.getMessage());
+	}
+	db.dbClose();
+	
+}
+}
+

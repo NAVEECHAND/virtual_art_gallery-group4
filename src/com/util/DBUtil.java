@@ -5,7 +5,7 @@ import java.sql.SQLException;
 public class DBUtil {
 	 private String usernameDb="root";
 	 private String passwordDb="";
-	 private String urlDb= "jdbc:mysql://localhost:3306/galary";
+	 private String urlDb= "jdbc:mysql://localhost:3306/final";
 	 private String driverName="com.mysql.jdbc.Driver";
 	 private Connection conn;
 	 //load the driver

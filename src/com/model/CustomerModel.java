@@ -35,6 +35,7 @@ public CustomerModel(String username, String password, String email, String firs
 	this.dateOfBirth = dateOfBirth;
 	this.profilePic = profilePic;
 	this.favouriteArtwork = favouriteArtwork;
+	
 }
 public int getCustomerId() {
 	return customerId;
